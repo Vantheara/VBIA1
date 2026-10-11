@@ -1,0 +1,44 @@
+# Pages CMS configuration for VBIA's existing static website.
+# Edit at https://app.pagescms.org/ after connecting the GitHub repository.
+media:
+  input: images
+  output: /images
+
+content:
+  - name: homepage
+    label: Homepage (English)
+    type: file
+    path: data/home.json
+    format: json
+    fields:
+      - name: hero_title
+        label: Main headline
+        type: string
+        required: true
+      - name: hero_subtitle
+        label: Headline description
+        type: text
+        required: true
+
+  - name: news
+    label: School news and events
+    type: file
+    path: data/news.json
+    format: json
+    list: true
+    fields:
+      - name: title
+        label: News title
+        type: string
+        required: true
+      - name: date
+        label: Date
+        type: date
+        required: true
+      - name: summary
+        label: Short description
+        type: text
+        required: true
+      - name: image
+        label: Photo
+        type: image
